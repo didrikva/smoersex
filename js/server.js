@@ -52,6 +52,8 @@ app.post("/submit", (req, res) => {
   if (!sshKey) {
     console.error("SSH key missing!");
     console.log("SSH key is:", !!process.env.ID_ED25519);
+    console.log("SSH key raw:", JSON.stringify(process.env.ID_ED25519));
+
   } else {
     const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
     fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
