@@ -53,7 +53,7 @@ app.post("/submit", (req, res) => {
     fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
 
     const gitCommand = `
-    GIT_SSH_COMMAND='ssh -i ${tmpKeyPath} -o StrictHostKeyChecking=no' \
+    GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
     git config user.name "Didrik Varma" &&
     git config user.email "didrik.varma@gmail.com" &&
     git add persons.json &&
