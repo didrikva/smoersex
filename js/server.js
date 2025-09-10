@@ -47,8 +47,10 @@ app.post("/submit", (req, res) => {
 
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
-  const sshKeyPath = "/etc/secrets/id_ed25519";
-  fs.chmodSync(sshKeyPath, 0o600);
+
+  const sshKey = process.env.ID_ED25519;
+  const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
+  fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
 
   const gitCommand = `
     GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
