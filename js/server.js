@@ -48,7 +48,7 @@ app.post("/submit", (req, res) => {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 
 
-  const sshKey = process.env.ID_ED25519;
+  const sshKey = process.env.id_ed25519;
   const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
   fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
 
