@@ -1,3 +1,5 @@
+const { exec } = require("child_process");
+
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
@@ -44,6 +46,24 @@ app.post("/submit", (req, res) => {
   person[category].count += 1;
 
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+
+  const sshKeyPath = "/etc/secrets/id_ed25519";
+  fs.chmodSync(sshKeyPath, 0o600);
+
+  const gitCommand = `
+    GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
+    git add persons.json && git commit -m "Update from server" && git push origin main
+  `;
+
+  exec(gitCommand, (err, stdout, stderr) => {
+    if (err) {
+      console.error("Git error:", err);
+      console.error(stderr);
+    } else {
+      console.log("Git push successful!");
+      console.log(stdout);
+    }
+  });
 
   res.json({ message: "Saved!" });
 });
