@@ -55,7 +55,7 @@ app.post("/submit", (req, res) => {
     git add persons.json && git commit -m "Update from server" && git push origin main
   `;
 
-  exec(gitCommand, (err, stdout, stderr) => {
+  exec(gitCommand, { cwd: path.join(__dirname, "..") }, (err, stdout, stderr) => {
     if (err) {
       console.error("Git error:", err);
       console.error(stderr);
@@ -64,6 +64,7 @@ app.post("/submit", (req, res) => {
       console.log(stdout);
     }
   });
+
 
   res.json({ message: "Saved!" });
 });
