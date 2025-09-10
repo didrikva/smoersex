@@ -49,23 +49,27 @@ app.post("/submit", (req, res) => {
 
 
   const sshKey = process.env.id_ed25519;
-  const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
-  fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
+  if (!sshKey) {
+    console.error("SSH key missing!");
+  } else {
+    const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
+    fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
 
-  const gitCommand = `
-    GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
-    git add persons.json && git commit -m "Update from server" && git push origin main
-  `;
+    const gitCommand = `
+      GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
+      git add persons.json && git commit -m "Update from server" && git push origin main
+    `;
 
-  exec(gitCommand, { cwd: path.join(__dirname, "..") }, (err, stdout, stderr) => {
-    if (err) {
-      console.error("Git error:", err);
-      console.error(stderr);
-    } else {
-      console.log("Git push successful!");
-      console.log(stdout);
-    }
-  });
+    exec(gitCommand, { cwd: path.join(__dirname, "..") }, (err, stdout, stderr) => {
+      if (err) {
+        console.error("Git error:", err);
+        console.error(stderr);
+      } else {
+        console.log("Git push successful!");
+        console.log(stdout);
+      }
+    });
+  }
 
 
   res.json({ message: "Saved!" });
