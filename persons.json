@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "name": "Fjeutboll",
+    "bajs": {
+      "comment": [
+        "skit bra",
+        "helt okej"
+      ],
+      "rating": [
+        8,
+        6
+      ],
+      "count": 2
+    },
+    "piss": {
+      "comment": [
+        "bra flow"
+      ],
+      "rating": [
+        7
+      ],
+      "count": 1
+    },
+    "spya": {
+      "comment": [
+        "kunde varit bättre",
+        "dåligt"
+      ],
+      "rating": [
+        4,
+        3
+      ],
+      "count": 2
+    }
+  },
+  {
+    "id": 2,
+    "name": "Mintiii",
+    "bajs": {
+      "comment": [
+        "toppen",
+        "rolig"
+      ],
+      "rating": [
+        9,
+        7
+      ],
+      "count": 2
+    },
+    "piss": {
+      "comment": [
+        "mid"
+      ],
+      "rating": [
+        5
+      ],
+      "count": 1
+    },
+    "spya": {
+      "comment": [
+        "förvirrande"
+      ],
+      "rating": [
+        4
+      ],
+      "count": 1
+    }
+  },
+  {
+    "id": 3,
+    "name": "Eek",
+    "bajs": {
+      "comment": [
+        "stabil",
+        "bra"
+      ],
+      "rating": [
+        6,
+        7
+      ],
+      "count": 2
+    },
+    "piss": {
+      "comment": [
+        "lite seg"
+      ],
+      "rating": [
+        4
+      ],
+      "count": 1
+    },
+    "spya": {
+      "comment": [
+        "ok",
+        "sämre"
+      ],
+      "rating": [
+        5,
+        3
+      ],
+      "count": 2
+    }
+  },
+  {
+    "id": 4,
+    "name": "Tycoon",
+    "bajs": {
+      "comment": [
+        "kanon"
+      ],
+      "rating": [
+        8
+      ],
+      "count": 1
+    },
+    "piss": {
+      "comment": [
+        "riktigt nice",
+        "fett bra"
+      ],
+      "rating": [
+        9,
+        10
+      ],
+      "count": 2
+    },
+    "spya": {
+      "comment": [
+        "sådär"
+      ],
+      "rating": [
+        5
+      ],
+      "count": 1
+    }
+  },
+  {
+    "id": 5,
+    "name": "Munter",
+    "bajs": {
+      "comment": [
+        "svagt",
+        "dåligt"
+      ],
+      "rating": [
+        3,
+        2
+      ],
+      "count": 2
+    },
+    "piss": {
+      "comment": [
+        "bra",
+        "starkt",
+        "fantastiskt",
+        "standard"
+      ],
+      "rating": [
+        7,
+        8,
+        9,
+        5
+      ],
+      "count": 4
+    },
+    "spya": {
+      "comment": [
+        "meh"
+      ],
+      "rating": [
+        4
+      ],
+      "count": 1
+    }
+  },
+  {
+    "id": 6,
+    "name": "Bänner",
+    "bajs": {
+      "comment": [
+        "fint"
+      ],
+      "rating": [
+        6
+      ],
+      "count": 1
+    },
+    "piss": {
+      "comment": [
+        "toppen",
+        "helt ok"
+      ],
+      "rating": [
+        8,
+        5
+      ],
+      "count": 2
+    },
+    "spya": {
+      "comment": [
+        "meh",
+        "svagt"
+      ],
+      "rating": [
+        3,
+        4
+      ],
+      "count": 2
+    }
+  },
+  {
+    "id": 7,
+    "name": "LeKing",
+    "bajs": {
+      "comment": [
+        "fett bra",
+        "rolig"
+      ],
+      "rating": [
+        9,
+        7
+      ],
+      "count": 2
+    },
+    "piss": {
+      "comment": [
+        "snyggt jobbat"
+      ],
+      "rating": [
+        6
+      ],
+      "count": 1
+    },
+    "spya": {
+      "comment": [
+        "otroligt",
+        "sämst",
+        "random"
+      ],
+      "rating": [
+        10,
+        2,
+        5
+      ],
+      "count": 3
+    }
+  },
+  {
+    "id": 8,
+    "name": "Defänder",
+    "bajs": {
+      "comment": [
+        "bra flow"
+      ],
+      "rating": [
+        7
+      ],
+      "count": 1
+    },
+    "piss": {
+      "comment": [
+        "meh",
+        "kan vara bättre"
+      ],
+      "rating": [
+        4,
+        5
+      ],
+      "count": 2
+    },
+    "spya": {
+      "comment": [
+        "dåligt",
+        "rörigt"
+      ],
+      "rating": [
+        3,
+        4
+      ],
+      "count": 2
+    }
+  }
+]
