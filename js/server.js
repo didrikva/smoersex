@@ -49,19 +49,17 @@ app.post("/submit", (req, res) => {
 
 
   const sshKey = process.env.ID_ED25519;
-  if (!sshKey) {
-    console.error("SSH key missing!");
-    console.log("SSH key is:", !!process.env.ID_ED25519);
-    console.log("SSH key raw:", JSON.stringify(process.env.ID_ED25519));
-
-  } else {
     const sshKeyPath = path.join(__dirname, "..", "id_ed25519_temp");
     fs.writeFileSync(sshKeyPath, sshKey, { mode: 0o600 });
 
     const gitCommand = `
-      GIT_SSH_COMMAND='ssh -i ${sshKeyPath} -o StrictHostKeyChecking=no' \
-      git add persons.json && git commit -m "Update from server" && git push origin main
-    `;
+    GIT_SSH_COMMAND='ssh -i ${tmpKeyPath} -o StrictHostKeyChecking=no' \
+    git config user.name "Didrik Varma" &&
+    git config user.email "didrik.varma@gmail.com" &&
+    git add persons.json &&
+    git commit -m "Update from server" &&
+    git push origin main
+  `;
 
     exec(gitCommand, { cwd: path.join(__dirname, "..") }, (err, stdout, stderr) => {
       if (err) {
@@ -72,7 +70,6 @@ app.post("/submit", (req, res) => {
         console.log(stdout);
       }
     });
-  }
 
 
   res.json({ message: "Saved!" });
